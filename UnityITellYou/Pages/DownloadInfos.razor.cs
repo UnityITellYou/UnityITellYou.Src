@@ -24,10 +24,10 @@ namespace UnityITellYou.Pages
 
         public IEnumerable<DownloadInfoDto> DownloadInfos { get; set; }
 
-        protected override async Task OnInitializedAsync()
-        {
+        //protected override async Task OnInitializedAsync()
+        //{
             
-        }
+        //}
 
         protected override async Task OnParametersSetAsync()
         {

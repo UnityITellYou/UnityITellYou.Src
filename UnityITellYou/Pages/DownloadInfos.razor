@@ -1,0 +1,54 @@
+﻿@page "/DownloadInfos/{FileName}/{Title}"
+@inherits DownloadInfosModel
+
+<div class="container">
+    <div class="card shadow mb-3">
+        <div class="card-header">
+            Unity I Tell You - @Title
+        </div>
+        <div class="card-body">
+            @if (Loading)
+            {
+                <div class="loading-tips">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">加载中，请稍后...</span>
+                    </div>
+                    <p>加载中</p>
+                </div>
+            }
+            else
+            {
+                @if(this.DownloadInfos == null || this.DownloadInfos.Count() < 1)
+                {
+                    <div class="alert alert-dark" role="alert">
+                        暂无数据
+                    </div>
+                }
+                else
+                {
+                    @foreach(var item in this.DownloadInfos)
+                    {
+                        <div class="card mb-1">
+                            <div class="card-body row">
+                                <div class="col-4">
+                                    <h6 class="h6">@item.Title</h6>
+                                    <p class="mb-0">@item.Date</p>
+                                </div>
+                                <div class="col-8 float-right">
+                                    <a href="@item.UnityHubUri" class="btn btn-outline-primary @(string.IsNullOrEmpty(item.UnityHubUri) ? "disabled" : string.Empty)">
+                                        <span class="oi oi-terminal"></span>
+                                        Unity Hub下载
+                                    </a>
+                                    <a href="@($"https://github.com/UnityITellYou/UnityITellYou.github.io/releases/tag/{item.GithubTag}")" target="_blank" class="btn btn-outline-secondary @(string.IsNullOrEmpty(item.GithubTag) ? "disabled" : string.Empty)">
+                                        <span class="oi oi-paperclip"></span>
+                                        直接下载
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>

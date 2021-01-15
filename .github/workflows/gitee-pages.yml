@@ -1,7 +1,8 @@
 name: Deploy To GiteePages
 
 on:
-  workflows: ["DeployToGitHubPages"]
+  workflow_run:
+    workflows: ["DeployToGitHubPages"]
     branches: [master]
     types: 
       - completed

@@ -28,6 +28,7 @@ jobs:
       with:
         target_branch: gh-pages
         build_dir: ${{ env.PUBLISH_DIR }}
-        repo: https://github.com/UnityITellYou/UnityITellYou.github.io.git
+        repo: UnityITellYou/UnityITellYou.github.io
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

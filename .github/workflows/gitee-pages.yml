@@ -1,8 +1,11 @@
 name: Deploy To GiteePages
 
 on:
-  push:
-    branches: [ master ]
+  workflows: ["DeployToGitHubPages"]
+    branches: [master]
+    types: 
+      - completed
+      - requested
 
 jobs:
   build:

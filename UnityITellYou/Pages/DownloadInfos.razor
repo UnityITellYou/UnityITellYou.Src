@@ -1,4 +1,4 @@
-﻿@page "/DownloadInfos/{FileName}/{Title}"
+@page "/DownloadInfos/{FileName}/{Title}"
 @inherits DownloadInfosModel
 
 <div class="container">
@@ -39,7 +39,7 @@
                                         <span class="oi oi-terminal"></span>
                                         Unity Hub下载
                                     </a>
-                                    <a href="@($"https://github.com/UnityITellYou/UnityITellYou.github.io/releases/tag/{item.GithubTag}")" target="_blank" class="btn btn-outline-secondary @(string.IsNullOrEmpty(item.GithubTag) ? "disabled" : string.Empty)">
+                                    <a href="@($"https://github.com/UnityITellYou/UnityITellYou.github.io/releases/tag/{item.GithubTag}")" target="_blank" class="btn btn-outline-info @(string.IsNullOrEmpty(item.GithubTag) ? "disabled" : string.Empty)">
                                         <span class="oi oi-paperclip"></span>
                                         直接下载
                                     </a>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -25,7 +25,7 @@ namespace GetUnityDownloadInfos
 
             var handler = new HttpClientHandler
             {
-                Proxy = new WebProxy("127.0.0.1", 1080),
+                Proxy = new WebProxy("127.0.0.1", 9910),
                 UseProxy = true
             };
 
@@ -148,6 +148,15 @@ namespace GetUnityDownloadInfos
                 {
                     var hubUriHtmlElement = hubUriAElement as IHtmlAnchorElement;
                     detail.UnityHubUri = hubUriHtmlElement.Href;
+                }
+
+                //抓一下tag
+                //规则，从unity hub uri里面 unityhub://2020.2.4f1/becced5a802b 抓取中间那段作为tag
+                if (!detail.UnityHubUri.IsNullOrEmpty())
+                {
+                    var tag = detail.UnityHubUri.Substring(0, detail.UnityHubUri.LastIndexOf('/'));
+                    tag = tag.Replace("unityhub://", string.Empty);
+                    detail.GithubTag = tag;
                 }
 
                 //种子文件

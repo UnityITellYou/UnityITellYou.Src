@@ -3,4 +3,5 @@
 **/.vs/
 **/bin/
 **/obj/
-/UnityITellYou/*.user
+*.pubxml
+*.user

@@ -1,4 +1,4 @@
-﻿@inject UnityITellYou.Services.IDataService dataService
+@inject UnityITellYou.Services.IDataService dataService
 
 <div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">Unity I Tell You</a>
@@ -19,7 +19,7 @@
             @foreach (var item in m_DownloadNav)
             {
                 <li class="nav-item px-3">
-                    <NavLink class="nav-link" href="@($"DownloadInfos/{item.File}/{item.Title}")">
+                    <NavLink class="nav-link" href="@($"DownloadInfos/{item.Id}")">
                         <span class="oi oi-folder" aria-hidden="true"></span> @item.Title
                     </NavLink>
                 </li>

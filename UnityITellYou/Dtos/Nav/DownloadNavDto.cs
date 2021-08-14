@@ -1,8 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace UnityITellYou.Dtos.Nav
 {
     public class DownloadNavDto
@@ -16,5 +11,10 @@ namespace UnityITellYou.Dtos.Nav
         /// 对应的Json文件
         /// </summary>
         public string File { get; set; }
+
+        /// <summary>
+        /// 页面组件之间的导航跳转用这个
+        /// </summary>
+        public string Id { get; set; }
     }
 }

@@ -25,8 +25,8 @@ namespace GetUnityDownloadInfos
 
             var handler = new HttpClientHandler
             {
-                Proxy = new WebProxy("127.0.0.1", 9910),
-                UseProxy = true
+                // Proxy = new WebProxy("127.0.0.1", 9910),
+                // UseProxy = true
             };
 
             var angleSharpConfig = Configuration.Default
@@ -88,7 +88,7 @@ namespace GetUnityDownloadInfos
 
 
             Console.WriteLine("完了");
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
 

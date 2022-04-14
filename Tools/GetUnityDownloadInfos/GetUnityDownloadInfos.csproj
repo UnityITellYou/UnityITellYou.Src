@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AngleSharp" Version="0.14.0" />
-    <PackageReference Include="AngleSharp.Io" Version="0.14.0" />
-    <PackageReference Include="Nekonya.Common" Version="1.0.5" />
+    <PackageReference Include="AngleSharp" Version="0.16.1" />
+    <PackageReference Include="AngleSharp.Io" Version="0.16.0" />
+    <PackageReference Include="Nekonya.Common" Version="1.0.7" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
-    <PackageReference Include="System.Text.Json" Version="5.0.1" />
+    <PackageReference Include="System.Text.Json" Version="6.0.3" />
   </ItemGroup>
 
 </Project>

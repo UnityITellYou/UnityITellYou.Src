@@ -9,7 +9,7 @@ namespace UnityITellYou.Services
 {
     public interface IDataService
     {
-        Task<IEnumerable<DownloadInfoDto>> GetDownloadInfosAsync(string fileName);
+        Task<IEnumerable<DownloadInfoDto>?> GetDownloadInfosAsync(string fileName);
 
         /// <summary>
         /// 获取导航栏数据

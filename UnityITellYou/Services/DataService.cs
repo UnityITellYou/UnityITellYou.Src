@@ -35,7 +35,7 @@ namespace UnityITellYou.Services
         }
 
 
-        public async Task<IEnumerable<DownloadInfoDto>> GetDownloadInfosAsync(string fileName)
+        public async Task<IEnumerable<DownloadInfoDto>?> GetDownloadInfosAsync(string fileName)
         {
             if(m_Dict_DownloadInfos.TryGetValue(fileName, out var _infos))
             {
@@ -44,7 +44,7 @@ namespace UnityITellYou.Services
 
             //从网络获取
             var infos = await m_HttpClient.GetFromJsonAsync<IEnumerable<DownloadInfoDto>>($"download-data/{fileName}");
-            m_Dict_DownloadInfos.Add(fileName, infos);
+            m_Dict_DownloadInfos.Add(fileName, infos!);
             return infos;
         }
 

@@ -9,11 +9,15 @@
         <div class="card-body">
             @if (Loading)
             {
-                <div class="loading-tips">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="sr-only">加载中，请稍后...</span>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-12 col-md-8 col-lg-6 col-xxl-5">
+                        <div class="card card-body">
+                            <div class="d-flex mb-3 justify-content-center">
+                                <div class="spinner-border text-primary" role="status" aria-hidden="true"></div>
+                                <p class="mb-0 align-self-center ms-3 fs-5">加载中, 请稍后</p>
+                            </div>
+                        </div>
                     </div>
-                    <p>加载中</p>
                 </div>
             }
             else

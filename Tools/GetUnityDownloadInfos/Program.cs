@@ -133,9 +133,11 @@ namespace GetUnityDownloadInfos
 
             foreach(var item in archive_items)
             {
-                var detail = new DownloadDetailDto();
-                //获取名称
-                detail.Title = item.GetElementsByTagName("h4")?.FirstOrDefault()?.InnerHtml;
+                var detail = new DownloadDetailDto
+                {
+                    //获取名称
+                    Title = item.GetElementsByTagName("h4")?.FirstOrDefault()?.InnerHtml
+                };
                 if (detail.Title.IsNullOrEmpty())
                     continue;
 
@@ -154,7 +156,7 @@ namespace GetUnityDownloadInfos
                 //规则，从unity hub uri里面 unityhub://2020.2.4f1/becced5a802b 抓取中间那段作为tag
                 if (!detail.UnityHubUri.IsNullOrEmpty())
                 {
-                    var tag = detail.UnityHubUri.Substring(0, detail.UnityHubUri.LastIndexOf('/'));
+                    var tag = detail.UnityHubUri[..detail.UnityHubUri.LastIndexOf('/')];
                     tag = tag.Replace("unityhub://", string.Empty);
                     detail.GithubTag = tag;
                 }

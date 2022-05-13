@@ -99,6 +99,9 @@ namespace GetUnityDownloadInfos
                 default:
                     nav = null;
                     return false;
+                case "version-2022":
+                    nav = new DownloadNavDto { Title = "Unity 2022.x", File = "2022.x.json" };
+                    return true;
                 case "version-2021":
                     nav = new DownloadNavDto { Title = "Unity 2021.x", File = "2021.x.json" };
                     return true;
